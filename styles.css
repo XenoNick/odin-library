@@ -7,6 +7,7 @@
 }
 :root{
     font-family: 'typewriter', sans-serif;
+    --dark-color: #818281;
 }
 body {
   display: flex;
@@ -23,7 +24,7 @@ body {
 }
 .header {
   grid-column: 2;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--dark-color);
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -37,23 +38,33 @@ body {
 }
 form {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* gap: 10px; */
+  gap: 10px;
 }
 .input {
   display: flex;
   flex-direction: column;
 }
+.divider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+.title{
+    text-decoration: underline 4px solid var(--dark-color);
+}
 /* Add Button */
 .add-button {
   align-self: flex-end;
-  padding: 6px 20px;
-  font-size: 1.2rem;
+  padding: .3em 1em;
+  font-size: 1.4rem;
   color: #fff;
   background-color: #0064ff;
-  border: 1px solid #040404;
+  border: 1px solid var(--dark-color);
   border-radius: 20px;
   font-family: inherit;
 }
@@ -88,7 +99,7 @@ input[type='checkbox'] {
   justify-content: flex-start;
   align-items: center;
   transition: all 0.2s ease-in;
-  background-color: #818281;
+  background-color: var(--dark-color);
   cursor: pointer;
 }
 .slider::before {
@@ -110,4 +121,7 @@ input[type='checkbox'] {
 /*  */
 .input label {
     font-size: 1.1rem;
+}
+.input input{
+    font-family: inherit;
 }
