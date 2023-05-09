@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'typewriter';
+    src: url('./fonts/moms_typewriter/momt___-webfont.woff2') format('woff2'),
+         url('./fonts/moms_typewriter/momt___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    font-family: 'typewriter', sans-serif;
+}
 body {
   display: flex;
   justify-content: center;
@@ -27,9 +37,10 @@ body {
 }
 form {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 10px;
+  width: 100%;
+  /* gap: 10px; */
 }
 .input {
   display: flex;
@@ -44,6 +55,7 @@ form {
   background-color: #0064ff;
   border: 1px solid #040404;
   border-radius: 20px;
+  font-family: inherit;
 }
 .add-button:hover {
   outline: 2px solid #000;
@@ -52,10 +64,8 @@ form {
 .add-button:active {
   outline: 3px solid #00ff70;
 }
+/*  */
 /* Toggle switch */
-.input label {
-  font-size: 1.1rem;
-}
 .checkbox {
   position: relative;
 }
@@ -96,4 +106,8 @@ input[type='checkbox'] {
 }
 #read:checked + .slider {
   background-color: #0064ff;
+}
+/*  */
+.input label {
+    font-size: 1.1rem;
 }
