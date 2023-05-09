@@ -35,22 +35,24 @@ form {
   display: flex;
   flex-direction: column;
 }
-.create-button {
+/* Add Button */
+.add-button {
   align-self: flex-end;
   padding: 6px 20px;
   font-size: 1.2rem;
-  color: #0064ff;
-  background-color: #09d53c;
-  border: 1px solid blue;
+  color: #fff;
+  background-color: #0064ff;
+  border: 1px solid #040404;
   border-radius: 20px;
 }
-.create-button:hover {
-  outline: 2px solid blue;
+.add-button:hover {
+  outline: 2px solid #000;
   cursor: pointer;
 }
-.create-button:active {
-  outline: 3px solid blue;
+.add-button:active {
+  outline: 3px solid #00ff70;
 }
+/* Toggle switch */
 .input label {
   font-size: 1.1rem;
 }
@@ -90,7 +92,7 @@ input[type='checkbox'] {
   margin-left: 2px;
 }
 #read:checked + .slider::before {
-  transform: translateX(28px);
+  transform: translateX(29px);
 }
 #read:checked + .slider {
   background-color: #0064ff;
