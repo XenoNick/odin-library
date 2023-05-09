@@ -1,20 +1,20 @@
 @font-face {
-    font-family: 'typewriter';
-    src: url('./fonts/moms_typewriter/momt___-webfont.woff2') format('woff2'),
-         url('./fonts/moms_typewriter/momt___-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'typewriter';
+  src: url('./fonts/moms_typewriter/momt___-webfont.woff2') format('woff2'),
+    url('./fonts/moms_typewriter/momt___-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-:root{
-    font-family: 'typewriter', sans-serif;
-    --dark-color: #818281;
+:root {
+  font-family: 'typewriter', sans-serif;
+  --dark-color: #818281;
 }
 body {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: #c7d1d3;
+  background-color: #5e5e5e;
 }
 .grid-container {
   width: 1200px;
@@ -47,33 +47,33 @@ form {
   display: flex;
   flex-direction: column;
 }
-.divider{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
 }
-.title{
-    text-decoration: underline 4px solid var(--dark-color);
+.title {
+  text-decoration: underline 4px solid var(--dark-color);
 }
 /* Add Button */
 .add-button {
   align-self: flex-end;
-  padding: .3em 1em;
+  padding: 0.3em 1em;
   font-size: 1.4rem;
-  color: #fff;
-  background-color: #0064ff;
-  border: 1px solid var(--dark-color);
+  color: #000;
+  background-color: #ff0000;
+  border: 2px solid #000;
   border-radius: 20px;
   font-family: inherit;
 }
 .add-button:hover {
-  outline: 2px solid #000;
+    outline: 2px solid #000;
   cursor: pointer;
 }
 .add-button:active {
-  outline: 3px solid #00ff70;
+  background-color: #ce0000;
 }
 /*  */
 /* Toggle switch */
@@ -116,12 +116,18 @@ input[type='checkbox'] {
   transform: translateX(29px);
 }
 #read:checked + .slider {
-  background-color: #0064ff;
+  background-color: #ff0000;
 }
 /*  */
 .input label {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
-.input input{
-    font-family: inherit;
+.input input {
+  font-family: inherit;
+  background-color: rgb(160, 160, 160);
+  border: none;
+  border-radius: 5px;
+}
+.input input:focus {
+  outline: 2px solid #ff0000;
 }
