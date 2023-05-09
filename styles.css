@@ -54,3 +54,44 @@ form {
 .input label {
   font-size: 1.1rem;
 }
+.checkbox {
+  position: relative;
+}
+.checkbox label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input[type='checkbox'] {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+.slider {
+  height: 20px;
+  width: 50px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.2s ease-in;
+  background-color: #818281;
+  cursor: pointer;
+}
+.slider::before {
+  content: '';
+  height: 16px;
+  width: 17px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  background-color: white;
+  margin-left: 2px;
+}
+#read:checked + .slider::before {
+  transform: translateX(28px);
+}
+#read:checked + .slider {
+  background-color: #0064ff;
+}
