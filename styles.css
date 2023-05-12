@@ -210,7 +210,7 @@ span.amount {
   background-color: #000;
   position: absolute;
   bottom: 0;
-  transform: translateY(30px);
+  transform: translateY(40px);
   border-radius: 5px;
 }
 .error-text {
