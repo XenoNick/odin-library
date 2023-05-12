@@ -145,6 +145,14 @@ input[type='checkbox']:checked + .slider {
 span[aria-label='required'] {
   color: var(--red);
 }
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 /* Cards */
 .card {
   box-sizing: border-box;
@@ -201,14 +209,10 @@ span.amount {
   right: 0;
   transform: translateY(-10px);
   border-radius: 5px;
-  /* display: none; */
 }
 .error-text {
   color: var(--red);
   text-decoration: underline 1px solid white;
   margin: 5px 5px;
-}
-.error-container:focus {
-  display: block;
 }
 /*  */
