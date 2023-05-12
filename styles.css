@@ -201,18 +201,25 @@ span.amount {
 }
 
 /* Error Message */
+.hidden {
+  display: none;
+}
 .error-container {
   height: max-content;
-  width: max-content;
+  width: 100%;
   background-color: #000;
   position: absolute;
-  right: 0;
-  transform: translateY(-10px);
+  bottom: 0;
+  transform: translateY(30px);
   border-radius: 5px;
 }
 .error-text {
   color: var(--red);
   text-decoration: underline 1px solid white;
   margin: 5px 5px;
+  font-size: .8rem;
+}
+input:invalid + .error-container{
+  display: block;
 }
 /*  */
