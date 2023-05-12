@@ -127,6 +127,9 @@ input[type='checkbox']:checked + .slider {
   background-color: var(--red);
 }
 /*  */
+.input {
+  position: relative;
+}
 .input label {
   font-size: 1.1rem;
 }
@@ -188,3 +191,24 @@ span.amount {
 .icon:hover {
   transform: scale(1.3, 1.3);
 }
+
+/* Error Message */
+.error-container {
+  height: max-content;
+  width: max-content;
+  background-color: #000;
+  position: absolute;
+  right: 0;
+  transform: translateY(-10px);
+  border-radius: 5px;
+  /* display: none; */
+}
+.error-text {
+  color: var(--red);
+  text-decoration: underline 1px solid white;
+  margin: 5px 5px;
+}
+.error-container:focus {
+  display: block;
+}
+/*  */
