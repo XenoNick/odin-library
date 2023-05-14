@@ -39,8 +39,9 @@ body {
   grid-column: 2;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  row-gap: 20px;
-  column-gap: 20px;
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  gap: 20px;
   justify-items: center;
 }
 form {

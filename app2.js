@@ -74,6 +74,13 @@ function deleteCard(e) {
   }
 }
 
+function updateReadStatus(e) {
+  const container =
+    e.target.parentElement.parentElement.parentElement.parentElement;
+  const index = container.getAttribute('data-index');
+  library[index].read = !library[index].read;
+}
+
 function createToggleButton(userBook) {
   const container = document.createElement('div');
   container.classList.add('toggle-buttons');
@@ -88,6 +95,7 @@ function createToggleButton(userBook) {
   input.setAttribute('name', `read-card${library.indexOf(userBook)}`);
   input.setAttribute('id', `read-card${library.indexOf(userBook)}`);
   input.checked = userBook.read;
+  input.addEventListener('input', updateReadStatus);
   const span2 = document.createElement('span');
   span2.classList.add('slider');
   label.append(span, input, span2);
