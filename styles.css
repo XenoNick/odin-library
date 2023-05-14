@@ -225,4 +225,17 @@ span.amount {
 input:invalid + .error-container {
   display: block;
 }
+input:out-of-range + .error-container > .error-text {
+  visibility: hidden;
+}
+input:out-of-range + .error-container::before {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  content: 'Must be less than 21450 pages!';
+  color: #ff0000;
+  font-size: .8rem;
+  padding: 6px 4px;
+}
 /*  */
