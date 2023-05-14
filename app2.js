@@ -44,6 +44,65 @@ function createElement(userBook, class1, class2) {
   return paragraph;
 }
 
+function updateCards(deleteIndex) {
+  const cards = [...document.querySelectorAll('.card')];
+  cards.forEach((card) => {
+    const cardIndex = +card.getAttribute('data-index');
+    if (cardIndex > deleteIndex) {
+      card
+        .querySelector('label')
+        .setAttribute('for', `read-card${cardIndex - 1}`);
+      card
+        .querySelector('input')
+        .setAttribute('id', `read-card${cardIndex - 1}`);
+      card
+        .querySelector('input')
+        .setAttribute('name', `read-card${cardIndex - 1}`);
+
+      card.setAttribute('data-index', `${cardIndex - 1}`);
+    }
+  });
+}
+
+function deleteCard(e) {
+  if (e.target.tagName === 'IMG') {
+    const container = e.target.parentElement.parentElement.parentElement;
+    const deleteIndex = +container.getAttribute('data-index');
+    container.remove();
+    updateCards(deleteIndex);
+    library.splice(deleteIndex, 1);
+  }
+}
+
+function createToggleButton(userBook) {
+  const container = document.createElement('div');
+  container.classList.add('toggle-buttons');
+  const toggleSwitch = document.createElement('div');
+  toggleSwitch.classList.add('input', 'checkbox');
+  const label = document.createElement('label');
+  label.setAttribute('for', `read-card${library.indexOf(userBook)}`);
+  const span = document.createElement('span');
+  span.textContent = 'Read:';
+  const input = document.createElement('input');
+  input.setAttribute('type', 'checkbox');
+  input.setAttribute('name', `read-card${library.indexOf(userBook)}`);
+  input.setAttribute('id', `read-card${library.indexOf(userBook)}`);
+  input.checked = userBook.read;
+  const span2 = document.createElement('span');
+  span2.classList.add('slider');
+  label.append(span, input, span2);
+  toggleSwitch.append(label);
+  const button = document.createElement('button');
+  button.classList.add('delete');
+  const img = document.createElement('img');
+  img.setAttribute('src', './icons/trash-can.svg');
+  img.classList.add('icon');
+  button.append(img);
+  button.addEventListener('click', deleteCard);
+  container.append(toggleSwitch, button);
+  return container;
+}
+
 function createCard(userBook) {
   const grid = document.querySelector('.main');
   const div = document.createElement('div');
@@ -55,6 +114,8 @@ function createCard(userBook) {
   const author = createElement(userBook, 'author', 'auth-name');
   const pages = createElement(userBook, 'pages', 'amount');
   const toggleButton = createToggleButton(userBook);
+  div.append(title, author, pages, toggleButton);
+  grid.append(div);
 }
 
 addButton.addEventListener('click', (e) => {
